@@ -1,12 +1,10 @@
-console.log(process.env);
 const firebaseConfig = {
-    apiKey: "AIzaSyC0lRcTsvlGp7Hs11mKJns9-D90NxoeYI4",
-    authDomain: "assingment11-7d34a.firebaseapp.com",
-    projectId: "assingment11-7d34a",
-    storageBucket: "assingment11-7d34a.appspot.com",
-    messagingSenderId: "234232455662",
-    appId: "1:234232455662:web:65a5328416d6376d0baeff",
-    measurementId: "G-P7BCTJ34PZ"
+    apiKey: "AIzaSyAx_UiQbJhOHrnECHG8Vqqni8_WTX8GxO8",
+    authDomain: "ema-jhon-online-shop.firebaseapp.com",
+    projectId: "ema-jhon-online-shop",
+    storageBucket: "ema-jhon-online-shop.appspot.com",
+    messagingSenderId: "488834816543",
+    appId: "1:488834816543:web:56ac701aac2e6e025c132a"
 };
 
 export default firebaseConfig;

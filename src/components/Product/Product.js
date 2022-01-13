@@ -3,12 +3,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import './Product.css';
 import Rating from 'react-rating';
-// var Rating = require('react-rating');
 
 const Product = (props) => {
-    // console.log(props);
+
     const { name, img, seller, price, stock, star } = props.product;
-    console.log(star);
 
     return (
         <div className="product">
