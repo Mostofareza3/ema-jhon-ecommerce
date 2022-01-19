@@ -1,30 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import './Login.css';
 
 const Login = () => {
-    const { signInUsingGoogle } = useAuth();
+    const { signInUsingGoogle, signInWithEmailPassword } = useAuth();
     const location = useLocation();
     const history = useHistory();
-    const redirect_uri = location.state?.from || '/shop';
+    const redirect_uri = location.state?.from || '/';
+    const [email, setEmail] = useState('')
+    const [password , setPassword] = useState('');
 
 
     const handleGoogleLogin = () => {
         signInUsingGoogle()
             .then(result => {
                 history.push(redirect_uri);
+                // history.push('/')
             })
+    }
+    const handleEmailLogIn = (e)=>{
+        e.preventDefault();
+        signInWithEmailPassword(email, password, history)
     }
 
     return (
         <div className="login-form">
             <div>
                 <h2>Login</h2>
-                <form>
-                    <input type="email" name="" id="" placeholder="Your Email" />
+                <form onSubmit={handleEmailLogIn}>
+                    <input onBlur={(e)=> setEmail(e.target.value)} type="email" name="" id="" placeholder="Your Email" />
                     <br />
-                    <input type="password" name="" id="" />
+                    <input onBlur={(e)=> setPassword(e.target.value)} type="password" name="" id="" />
                     <br />
                     <input type="submit" value="Submit" />
                 </form>
